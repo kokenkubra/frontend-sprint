@@ -1,0 +1,41 @@
+.content {
+    width: 400px;
+    height: 400px;
+    border: 1px solid #c3c3c3;
+    display: flex;
+  }
+  .mole{
+    width: 60px;
+    height: 60px;
+    background-color: red;
+   
+  }
+  .box {
+    width: 130px;
+    height: 130px;
+    
+  }
+  
+  #col-rev {
+    flex-direction: column-reverse;
+  }
+  
+  #row-rev {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  .borwn{
+    background-color: rgb(219, 158, 83);
+   
+  }
+  .red {
+    background-color: red;
+  }
+  
+  .lightblue {
+    background-color: lightblue;
+  }
+  
+  .yellow {
+    background-color: yellow;
+  }
