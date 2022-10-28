@@ -45,7 +45,6 @@ const refresh = () => {
 const todayday = document.querySelector(".DAY");
 const todaydte = document.querySelector(".DATE");
 const todayyear = document.querySelector(".YEAR");
-
 const todayTime = document.querySelector(".time");
 let newDte = new Date();
 
@@ -56,8 +55,6 @@ const weekdays =["Sunday",
         "Thursday",
         "Friday",
          "Saturday"]
-
-
     const r = weekdays[newDte.getDay()];
     todayday.innerHTML = r;
     const D = newDte.getUTCDate();
@@ -67,45 +64,33 @@ const weekdays =["Sunday",
     todayTime.innerHTML = newDte.toLocaleTimeString();
     
 }
-
-const is24Hour = false,
-    timeDisplay = document.querySelector(".time");
-   
-
-
-const changeTo12 = () => {
-        let currentDate = new Date(),
-        hours = currentDate.getHours(),
-        minutes = currentDate.getMinutes(),
-        seconds = currentDate.getSeconds();
-
-    if(is24Hour) {
-        timeDisplay.innerText = hours + ":" + minutes + ":" + seconds;
-    }
-    else {
-        var suffix = hours >= 12 ? "PM" : "AM",
-            hours12 = hours % 12;
-        
-        timeDisplay.innerText = hours12 + ":" + minutes + ":" + seconds + " " + suffix;
-    }
-
-}
-
-var changeFormat = function() {
-    is24Hour = !is24Hour;
-}
-
 setInterval(refresh, 1000)
- 
-const myStoptime24 = () => {
-   clearInterval(refresh);
-}
 
-setInterval(changeTo12, 1000)
+ // change time //
+//  const is24Hour = false;
+//  const timeDisplay = document.querySelector(".time");
+//  changeButton = document.querySelector("changeFormat");
 
-const myStoptime12 = () => {
-    clearInterval(changeTo12);
-}
- timeDisplay.addEventListener('click', changeTo12);
-window.setInterval(changeTo12, 100);
+// const updateTime = function() {
+// const currentDate = new Date(),
+//      hours = currentDate.getHours(),
+//      minutes = currentDate.getMinutes(),
+//      seconds = currentDate.getSeconds();
 
+//      if(is24Hour) {
+//         timeDisplay.innerText = hours + ":" + minutes + ":" + seconds;
+//     }
+//     else {
+//         var suffix = hours >= 12 ? "PM" : "AM",
+//             hours12 = hours % 12;
+        
+//         timeDisplay.innerText = hours12 + ":" + minutes + ":" + seconds + " " + suffix;
+//     }
+// };
+
+// const changeFormat = function() {
+//  is24Hour = !is24Hour;
+// };
+
+// changeButton.addEventListener("click", changeFormat);
+// window.setInterval(updateTime, 100);
